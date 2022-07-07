@@ -10,7 +10,6 @@ public class User {
 	private String username;
 	private String password;
 	private List<Account> account;
-	private List<Beneficiary> beneficiary;
 
 	public User() {
 		super();
@@ -25,6 +24,7 @@ public class User {
 		this.id = 0;
 		this.username = username;
 		this.password = password;
+		this.account = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -61,7 +61,7 @@ public class User {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, password, account, username);
+		return Objects.hash(id, password, username);
 	}
 
 	@Override
@@ -73,20 +73,11 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return id == other.id && Objects.equals(password, other.password) && Objects.equals(account, other.account)
-				&& Objects.equals(username, other.username);
+		return id == other.id && Objects.equals(password, other.password) && Objects.equals(username, other.username);
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", account=" + account + "]";
-	}
-
-	public List<Beneficiary> getBeneficiary() {
-		return beneficiary;
-	}
-	
-	public void setBeneficiary(List<Beneficiary> beneficiary) {
-		this.beneficiary = beneficiary;
+		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
 }

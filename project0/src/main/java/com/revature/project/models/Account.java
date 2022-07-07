@@ -5,26 +5,20 @@ import java.util.Objects;
 public class Account {
 	private int id;
 	private String name;
-	private String description;
 	private double balance;
-	private Beneficiary beneficiary;
 
 	public Account() {
 		super();
 		this.id = 0;
 		this.name = "";
-		this.description = "";
 		this.balance = 0.0;
-		this.beneficiary = new Beneficiary();
 	}
 
-	public Account(String name, String description, double balance, Beneficiary beneficiary) {
+	public Account(String name, double balance) {
 		super();
 		this.id = 0;
 		this.name = "";
-		this.description = "";
 		this.balance = 0.0;
-		this.beneficiary = new Beneficiary();
 	}
 
 	public int getId() {
@@ -43,14 +37,6 @@ public class Account {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public double getBalance() {
 		return balance;
 	}
@@ -59,17 +45,9 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public Beneficiary getBeneficiary() {
-		return beneficiary;
-	}
-
-	public void setBeneficiary(Beneficiary beneficiary) {
-		this.beneficiary = beneficiary;
-	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(balance, description, id, name, beneficiary);
+		return Objects.hash(id, name, balance);
 	}
 
 	@Override
@@ -81,13 +59,11 @@ public class Account {
 		if (getClass() != obj.getClass())
 			return false;
 		Account other = (Account) obj;
-		return id == other.id && Objects.equals(name, other.name) && Objects.equals(description, other.description)
-				&& balance == other.balance && Objects.equals(beneficiary, other.beneficiary);
+		return id == other.id && Objects.equals(name, other.name) && balance == other.balance;
 	}
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", name=" + name + ", balance=" + balance + ", beneficiary=" + beneficiary + ", description="
-				+ description + "]";
+		return "Account [id=" + id + ", name=" + name + ", balance=" + balance  + "]";
 	}
 }

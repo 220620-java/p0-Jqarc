@@ -3,7 +3,6 @@ package com.revature.project.service;
 import com.revature.project.ds.List;
 import com.revature.project.exceptions.UsernameAlreadyExistsException;
 import com.revature.project.models.Account;
-import com.revature.project.models.Beneficiary;
 import com.revature.project.models.User;
 
 public interface UserService {
@@ -37,22 +36,4 @@ public interface UserService {
 	 */
 	public List<Account> viewMyAccounts();
 	
-	/**
-	 * Retrieves all of the currently available pets in the application.
-	 * 
-	 * @return a List of the available pets
-	 */
-	public List<Beneficiary> viewMyBeneficiaries();
-
-	/*
-	 * Adopts a pet by updating the pet's status and adding the pet 
-	 * to the user's list of pets. If the pet is already adopted and
-	 * therefore cannot be adopted by this user, an exception is thrown.
-	 * 
-	 * @param pet the pet to be adopted
-	 * @param user the user who is adopting the pet
-	 * @return the user with their newly adopted pet in their pets list
-	 * @throws AlreadyAdoptedException
-	 */
-	// public User adoptPet(Pet pet, User user) throws AlreadyAdoptedException;
 }

@@ -12,9 +12,7 @@ public class ConnectionUtil {
 	private static ConnectionUtil connUtil;
 	private Properties props;
 	
-	private ConnectionUtil() {
-		
-	}
+	private ConnectionUtil() {}
 	
 	public static synchronized ConnectionUtil getConnectionUtil() {
 		if (connUtil == null) {
